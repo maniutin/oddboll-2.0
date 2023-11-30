@@ -1,0 +1,46 @@
+.navbar {
+  width: 100vw;
+  padding-top: 1.8vw;
+  padding-bottom: 1.8vw;
+  background-color: #fff;
+  font-family: aktiv-grotesk;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0em;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 1.8vw;
+  padding-bottom: 1.8vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  pointer-events: auto;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  padding: 2vw;
+}
+
+.nav-link a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-logo {
+  width: auto;
+  max-width: 100%;
+  max-height: 50px;
+  border: 0;
+  cursor: pointer;
+  height: fit-content;
+}
