@@ -31,13 +31,12 @@ function PostCard({ path, posts }: IProps) {
     posts &&
     posts.map((post: Post, index: number) => {
       return (
-        <div>
+        <div key={index}>
           <img
             src={post._embedded["wp:featuredmedia"]["0"].source_url}
-            style={{ width: "100%" }}
+            alt="album cover"
           />
           <h1
-            key={index}
             onClick={() =>
               navigate(
                 `${
