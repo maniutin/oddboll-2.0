@@ -1,6 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Nav.css";
+import Logo from "../../assets/oddboll-logo.png";
+import IgLogo from "../../assets/social_logos/ig_logo.png";
+import MixcloudLogo from "../../assets/social_logos/mixcloud_logo.svg";
+import ScLogo from "../../assets/social_logos/sc_logo.png";
+import SpotifyLogo from "../../assets/social_logos/spotify_logo.png";
 
 const Nav = () => {
   return (
@@ -8,11 +13,7 @@ const Nav = () => {
       <nav className="navbar">
         <div>
           <NavLink to="/">
-            <img
-              src="oddboll-logo.png"
-              alt="oddboll logo"
-              className="nav-logo"
-            />
+            <img src={Logo} alt="oddboll logo" className="nav-logo" />
           </NavLink>
         </div>
         <div className="nav-list">
@@ -105,6 +106,52 @@ const Nav = () => {
               About
             </NavLink>
           </div>
+        </div>
+        <div className="nav-social-logos">
+          <a
+            href="https://www.instagram.com/odddboll/"
+            target="_blank"
+            className="nav-social-link"
+          >
+            <img
+              src={IgLogo}
+              alt="instagram logo"
+              className="nav-social-icon"
+            />
+          </a>
+          <a
+            href="https://soundcloud.com/oddboll"
+            target="_blank"
+            className="nav-social-link"
+          >
+            <img
+              src={ScLogo}
+              alt="soundcloud logo"
+              className="nav-social-icon"
+            />
+          </a>
+          <a
+            href="https://www.mixcloud.com/kettle_whistle/"
+            target="_blank"
+            className="nav-social-link"
+          >
+            <img
+              src={MixcloudLogo}
+              alt="mixcloud logo"
+              className="nav-social-icon"
+            />
+          </a>
+          <a
+            href="https://open.spotify.com/user/31vcalh4tgtzrnatjpqtkg7zqmay?si=Yz2EzNO-Q16w38udiB78nw&nd=1"
+            target="_blank"
+            className="nav-social-link"
+          >
+            <img
+              src={SpotifyLogo}
+              alt="spotify logo"
+              className="nav-social-icon"
+            />
+          </a>
         </div>
       </nav>
     </div>
