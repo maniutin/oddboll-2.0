@@ -54,10 +54,15 @@ function PostCard({ path, posts }: IProps) {
             onClick={() => handleClick(postPath, post.content.rendered)}
           />
           <div className="post-card-text">
-            <h1 onClick={() => handleClick(postPath, post.content.rendered)}>
+            <h1
+              className="post-card-title"
+              onClick={() => handleClick(postPath, post.content.rendered)}
+            >
               {post.title.rendered.replace(reg, '"')}
             </h1>
-            <div>{parse(post.excerpt.rendered)}</div>
+            <div className="post-card-excerpt">
+              {parse(post.excerpt.rendered)}
+            </div>
           </div>
         </div>
       );
