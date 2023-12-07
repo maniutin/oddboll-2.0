@@ -1,6 +1,9 @@
 import React from "react";
+import { useArticleData } from "./hooks/useArticleData";
 
 function Test(props: { path: string }) {
+  const { articleInfo } = useArticleData();
+  console.log("=== ARTICLE INFO: ", articleInfo);
   switch (props.path) {
     case "/":
       return <p>boogers</p>;
