@@ -1,6 +1,6 @@
+import "./Nav.css";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Nav.css";
 import Logo from "../../assets/oddboll-logo.png";
 import IgLogo from "../../assets/social_logos/ig_logo.png";
 import MixcloudLogo from "../../assets/social_logos/mixcloud_logo.svg";

@@ -1,3 +1,4 @@
+import "./PostCard.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
@@ -46,16 +47,18 @@ function PostCard({ path, posts }: IProps) {
           : path
       }/${post.id}`;
       return (
-        <div key={index}>
+        <div key={index} className="post-card">
           <img
             src={post._embedded["wp:featuredmedia"]["0"].source_url}
             alt="album cover"
             onClick={() => handleClick(postPath, post.content.rendered)}
           />
-          <h1 onClick={() => handleClick(postPath, post.content.rendered)}>
-            {post.title.rendered.replace(reg, '"')}
-          </h1>
-          <div>{parse(post.excerpt.rendered)}</div>
+          <div className="post-card-text">
+            <h1 onClick={() => handleClick(postPath, post.content.rendered)}>
+              {post.title.rendered.replace(reg, '"')}
+            </h1>
+            <div>{parse(post.excerpt.rendered)}</div>
+          </div>
         </div>
       );
     })

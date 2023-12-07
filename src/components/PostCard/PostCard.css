@@ -1,0 +1,14 @@
+.post-card {
+  display: flex;
+}
+
+.post-card img {
+  margin-right: 5%;
+  width: 50%;
+}
+
+.post-card-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
