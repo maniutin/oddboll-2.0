@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import parse from "html-react-parser";
 
 interface IProps {
   path: string;
@@ -10,6 +11,7 @@ interface Post {
   categories: number[];
   content: { rendered: string };
   _embedded: any;
+  excerpt: { rendered: string };
   id: number;
   title: { rendered: string };
 }
@@ -30,30 +32,34 @@ function PostCard({ path, posts }: IProps) {
   return (
     posts &&
     posts.map((post: Post, index: number) => {
+      const postPath = `${
+        path === "/"
+          ? categoriesPathRef[
+              post.categories[1] as keyof typeof categoriesPathRef
+            ]
+          : path
+      }/${post.id}`;
       return (
         <div key={index}>
           <img
             src={post._embedded["wp:featuredmedia"]["0"].source_url}
             alt="album cover"
+            onClick={() =>
+              navigate(postPath, {
+                state: { content: post.content.rendered },
+              })
+            }
           />
           <h1
             onClick={() =>
-              navigate(
-                `${
-                  path === "/"
-                    ? categoriesPathRef[
-                        post.categories[1] as keyof typeof categoriesPathRef
-                      ]
-                    : path
-                }/${post.id}`,
-                {
-                  state: { content: post.content.rendered },
-                }
-              )
+              navigate(postPath, {
+                state: { content: post.content.rendered },
+              })
             }
           >
             {post.title.rendered.replace(reg, '"')}
           </h1>
+          <div>{parse(post.excerpt.rendered)}</div>
         </div>
       );
     })
