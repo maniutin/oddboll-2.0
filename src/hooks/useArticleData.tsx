@@ -6,7 +6,7 @@ const useArticleData = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8888/wordpress-trunk/wp-json/wp/v2/posts")
+      .get("http://localhost:8888/wordpress-trunk/wp-json/wp/v2/posts?_embed")
       .then((result) => {
         setArticleInfo((prev) => ({ ...prev, articleData: result.data }));
       })

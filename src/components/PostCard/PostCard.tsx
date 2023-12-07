@@ -9,6 +9,7 @@ interface IProps {
 interface Post {
   categories: number[];
   content: { rendered: string };
+  _embedded: any;
   id: number;
   title: { rendered: string };
 }
@@ -30,24 +31,30 @@ function PostCard({ path, posts }: IProps) {
     posts &&
     posts.map((post: Post, index: number) => {
       return (
-        <div
-          key={index}
-          onClick={() =>
-            navigate(
-              `${
-                path === "/"
-                  ? categoriesPathRef[
-                      post.categories[1] as keyof typeof categoriesPathRef
-                    ]
-                  : path
-              }/${post.id}`,
-              {
-                state: { content: post.content.rendered },
-              }
-            )
-          }
-        >
-          {post.title.rendered.replace(reg, '"')}
+        <div>
+          <img
+            src={post._embedded["wp:featuredmedia"]["0"].source_url}
+            style={{ width: "100%" }}
+          />
+          <h1
+            key={index}
+            onClick={() =>
+              navigate(
+                `${
+                  path === "/"
+                    ? categoriesPathRef[
+                        post.categories[1] as keyof typeof categoriesPathRef
+                      ]
+                    : path
+                }/${post.id}`,
+                {
+                  state: { content: post.content.rendered },
+                }
+              )
+            }
+          >
+            {post.title.rendered.replace(reg, '"')}
+          </h1>
         </div>
       );
     })
