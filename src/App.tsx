@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Nav from "./components/Nav/Nav";
-import Test from "./Test";
+import PostList from "./components/PostList/PostList";
 
 function App() {
   return (
@@ -11,15 +11,18 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/" element={<Test path={"/"} />} />
-          <Route path="/reviews" element={<Test path={"/reviews"} />} />
-          <Route path="/interviews" element={<Test path={"/interviews"} />} />
-          <Route path="/listen" element={<Test path={"/listen"} />} />
+          <Route path="/" element={<PostList path={"/"} />} />
+          <Route path="/reviews" element={<PostList path={"/reviews"} />} />
+          <Route
+            path="/interviews"
+            element={<PostList path={"/interviews"} />}
+          />
+          <Route path="/listen" element={<PostList path={"/listen"} />} />
           <Route
             path="/3-word-reviews"
-            element={<Test path={"/3-word-reviews"} />}
+            element={<PostList path={"/3-word-reviews"} />}
           />
-          <Route path="/about" element={<Test path={"/about"} />} />
+          <Route path="/about" element={<PostList path={"/about"} />} />
         </Routes>
       </Router>
     </div>
