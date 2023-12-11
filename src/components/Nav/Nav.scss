@@ -6,19 +6,17 @@
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0em;
-  position: relative;
+  position: fixed;
   z-index: 2;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 1.8vw;
-  padding-bottom: 1.8vw;
-  padding-left: 6vw;
-  padding-right: 6vw;
+  padding: 1.8vh 6vw;
   pointer-events: auto;
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
 .nav-list {
