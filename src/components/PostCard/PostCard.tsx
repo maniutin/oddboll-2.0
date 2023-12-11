@@ -47,13 +47,13 @@ function PostCard({ path, posts }: IProps) {
           : path
       }/${post.id}`;
       return (
-        <div key={index} className="post-card">
+        <article key={index} className="post-card">
           <img
             src={post._embedded["wp:featuredmedia"]["0"].source_url}
             alt="album cover"
             onClick={() => handleClick(postPath, post.content.rendered)}
           />
-          <div className="post-card-text">
+          <section className="post-card-text">
             <h1
               className="post-card-title"
               onClick={() => handleClick(postPath, post.content.rendered)}
@@ -63,8 +63,8 @@ function PostCard({ path, posts }: IProps) {
             <div className="post-card-excerpt">
               {parse(post.excerpt.rendered)}
             </div>
-          </div>
-        </div>
+          </section>
+        </article>
       );
     })
   );

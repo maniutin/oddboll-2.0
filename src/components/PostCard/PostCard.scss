@@ -3,12 +3,13 @@
 
   img {
     margin-right: 5%;
-    width: 50%;
+    width: 40%;
     cursor: pointer;
   }
 }
 
 .post-card-text {
+  width: 60%;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -16,11 +17,13 @@
   .post-card-title {
     cursor: pointer;
     font-family: "Roboto";
-    letter-spacing: "1px";
+    font-size: 2rem;
+    letter-spacing: 1px;
   }
 
   .post-card-excerpt {
     font-family: "Lato";
     font-style: italic;
+    font-size: 1.1rem;
   }
 }
