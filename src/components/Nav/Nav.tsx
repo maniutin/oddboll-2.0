@@ -147,7 +147,7 @@ const Nav = () => {
         </div>
       </div>
       <div className="hamburger">
-        <img src={Burger} />
+        <img src={Burger} alt="hamburger menu icon" />
       </div>
     </nav>
   );
