@@ -1,6 +1,7 @@
 import "./Nav.scss";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Burger from "../../assets/burger.svg";
 import Logo from "../../assets/oddboll-logo.png";
 import IgLogo from "../../assets/social_logos/ig_logo.png";
 import MixcloudLogo from "../../assets/social_logos/mixcloud_logo.svg";
@@ -144,6 +145,9 @@ const Nav = () => {
             />
           </a>
         </div>
+      </div>
+      <div className="hamburger">
+        <img src={Burger} />
       </div>
     </nav>
   );

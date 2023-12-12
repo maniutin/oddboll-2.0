@@ -13,13 +13,14 @@
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   .nav-logo {
     width: auto;
     max-width: 100%;
     max-height: 50px;
+    margin: 2vh 0;
     border: 0;
     cursor: pointer;
     height: fit-content;
@@ -29,12 +30,16 @@
     display: flex;
     align-items: center;
 
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+
     .nav-pages {
       display: flex;
       flex-direction: row;
 
       .nav-link {
-        padding: 2vw;
+        padding: 4vh 1vw;
 
         a {
           color: black;
@@ -65,6 +70,19 @@
           height: fit-content;
         }
       }
+    }
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 1025px) {
+      display: none;
+    }
+
+    img {
+      height: 5vh;
     }
   }
 }
