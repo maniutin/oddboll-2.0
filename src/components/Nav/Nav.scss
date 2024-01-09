@@ -1,5 +1,4 @@
 .navbar {
-  width: 100vw;
   background-color: #fff;
   font-weight: 300;
   font-style: normal;
@@ -14,7 +13,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   .nav-logo {
     width: auto;
@@ -29,6 +28,14 @@
   .nav-menu {
     display: flex;
     align-items: center;
+
+    &.expand {
+      display: flex;
+      flex-direction: column;
+      .nav-pages {
+        flex-direction: column;
+      }
+    }
 
     @media screen and (max-width: 1024px) {
       display: none;
@@ -76,6 +83,7 @@
   .hamburger {
     display: flex;
     align-items: center;
+    padding-top: 2.5vh;
 
     @media screen and (min-width: 1025px) {
       display: none;
