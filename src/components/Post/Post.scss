@@ -1,0 +1,37 @@
+.post-title {
+  font-size: calc(2.6vw + 1rem);
+}
+
+.post-content {
+  text-align: left;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    width: 90%;
+  }
+
+  .post-content-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      height: auto;
+    }
+
+    figcaption {
+      font-family: "Lato";
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+  }
+}

@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <nav className="navbar">
       <div>
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => setExpandBurger(!expandBurger)}>
           <img src={Logo} alt="oddboll logo" className="nav-logo" />
         </NavLink>
       </div>
@@ -23,6 +23,7 @@ const Nav = () => {
           <div className="nav-link">
             <NavLink
               to="/"
+              onClick={() => setExpandBurger(!expandBurger)}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -37,6 +38,8 @@ const Nav = () => {
 
           <div className="nav-link">
             <NavLink
+              to="/reviews"
+              onClick={() => setExpandBurger(!expandBurger)}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -44,7 +47,6 @@ const Nav = () => {
                     }
                   : {}
               }
-              to="/reviews"
             >
               Reviews
             </NavLink>
@@ -52,6 +54,8 @@ const Nav = () => {
 
           <div className="nav-link">
             <NavLink
+              to="/interviews"
+              onClick={() => setExpandBurger(!expandBurger)}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -59,7 +63,6 @@ const Nav = () => {
                     }
                   : {}
               }
-              to="/interviews"
             >
               Interviews
             </NavLink>
@@ -67,6 +70,8 @@ const Nav = () => {
 
           <div className="nav-link">
             <NavLink
+              to="/listen"
+              onClick={() => setExpandBurger(!expandBurger)}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -74,7 +79,6 @@ const Nav = () => {
                     }
                   : {}
               }
-              to="/listen"
             >
               Listen
             </NavLink>
@@ -82,6 +86,8 @@ const Nav = () => {
 
           <div className="nav-link">
             <NavLink
+              to="/3-word-reviews"
+              onClick={() => setExpandBurger(!expandBurger)}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -89,7 +95,6 @@ const Nav = () => {
                     }
                   : {}
               }
-              to="/3-word-reviews"
             >
               3-Word Reviews
             </NavLink>
@@ -97,6 +102,8 @@ const Nav = () => {
 
           <div className="nav-link">
             <NavLink
+              to="/about"
+              onClick={() => setExpandBurger(!expandBurger)}
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -104,7 +111,6 @@ const Nav = () => {
                     }
                   : {}
               }
-              to="/about"
             >
               About
             </NavLink>

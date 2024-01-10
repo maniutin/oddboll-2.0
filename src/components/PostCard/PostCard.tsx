@@ -28,9 +28,13 @@ function PostCard({ path, posts }: IProps) {
 
   const reg = /&#8220;|&#8221;/g;
 
-  const handleClick = (postPath: string, postContent: string) => {
+  const handleClick = (
+    postPath: string,
+    postTitle: string,
+    postContent: string
+  ) => {
     navigate(postPath, {
-      state: { content: postContent },
+      state: { title: postTitle, content: postContent },
     });
   };
 
@@ -51,12 +55,20 @@ function PostCard({ path, posts }: IProps) {
           <img
             src={post._embedded["wp:featuredmedia"]["0"].source_url}
             alt="album cover"
-            onClick={() => handleClick(postPath, post.content.rendered)}
+            onClick={() =>
+              handleClick(postPath, post.title.rendered, post.content.rendered)
+            }
           />
           <section className="post-card-text">
             <h1
               className="post-card-title"
-              onClick={() => handleClick(postPath, post.content.rendered)}
+              onClick={() =>
+                handleClick(
+                  postPath,
+                  post.title.rendered,
+                  post.content.rendered
+                )
+              }
             >
               {post.title.rendered.replace(reg, '"')}
             </h1>

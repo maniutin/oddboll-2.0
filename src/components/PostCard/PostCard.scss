@@ -1,5 +1,12 @@
 .post-card {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 100px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 
   img {
     margin-right: 5%;
@@ -17,7 +24,7 @@
   .post-card-title {
     cursor: pointer;
     font-family: "Roboto";
-    font-size: 2rem;
+    font-size: calc(1.8vw + 1rem);
     letter-spacing: 1px;
   }
 
