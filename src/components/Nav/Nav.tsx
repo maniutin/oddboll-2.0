@@ -11,9 +11,13 @@ import ScLogo from "../../assets/social_logos/sc_logo.png";
 const Nav = () => {
   const [expandBurger, setExpandBurger] = useState(false);
 
+  window.addEventListener("resize", function (event) {
+    if (window.innerWidth > 1024) setExpandBurger(false);
+  });
+
   return (
     <nav className="navbar">
-      <div>
+      <div className="nav-logo-wrapper">
         <NavLink to="/" onClick={() => setExpandBurger(!expandBurger)}>
           <img src={Logo} alt="oddboll logo" className="nav-logo" />
         </NavLink>

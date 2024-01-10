@@ -15,6 +15,12 @@
   justify-content: space-between;
   align-items: flex-start;
 
+  .nav-logo-wrapper {
+    @media screen and (max-width: 767px) {
+      width: 25%;
+    }
+  }
+
   .nav-logo {
     width: auto;
     max-width: 100%;
@@ -30,9 +36,8 @@
     align-items: center;
 
     &.expand {
-      display: flex;
-      flex-direction: column;
-      .nav-pages {
+      @media screen and (max-width: 1024px) {
+        display: flex;
         flex-direction: column;
       }
     }
@@ -44,6 +49,11 @@
     .nav-pages {
       display: flex;
       flex-direction: row;
+
+      @media screen and (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+      }
 
       .nav-link {
         padding: 4vh 1vw;
