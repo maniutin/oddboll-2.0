@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
 import Post from "./components/Post/Post";
 import PostList from "./components/PostList/PostList";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Nav />
         <main>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<PostList path={"/"} />} />
             <Route path="/reviews" element={<PostList path={"/reviews"} />} />
