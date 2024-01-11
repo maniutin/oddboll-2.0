@@ -11,6 +11,7 @@
   img {
     margin-right: 5%;
     width: 40%;
+    min-width: 40%;
     cursor: pointer;
 
     @media screen and (max-width: 767px) {
@@ -25,10 +26,14 @@
   flex-direction: column;
   text-align: left;
 
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
   .post-card-title {
     cursor: pointer;
     font-family: "Roboto";
-    font-size: calc(1.8vw + 1rem);
+    font-size: calc(2vw + 1rem);
     letter-spacing: 1px;
   }
 
