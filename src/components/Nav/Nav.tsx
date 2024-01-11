@@ -1,5 +1,5 @@
 import "./Nav.scss";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Burger from "../../assets/burger.svg";
 import Close from "../../assets/close.svg";
@@ -9,14 +9,24 @@ import MixcloudLogo from "../../assets/social_logos/mixcloud_logo.svg";
 import ScLogo from "../../assets/social_logos/sc_logo.png";
 
 const Nav = () => {
-  const [expandBurger, setExpandBurger] = useState(false);
+  const [expandBurger, setExpandBurger] = useState<boolean>(false);
+
+  const navMenu = useRef<HTMLDivElement>(null);
+
+  const closeOpenMenus = (e: any) => {
+    if (expandBurger && !navMenu.current?.contains(e.target)) {
+      setExpandBurger(false);
+    }
+  };
 
   window.addEventListener("resize", function (event) {
     if (window.innerWidth > 1024) setExpandBurger(false);
   });
 
+  document.addEventListener("mousedown", closeOpenMenus);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navMenu}>
       <div className="nav-logo-wrapper">
         <NavLink to="/" onClick={() => setExpandBurger(!expandBurger)}>
           <img src={Logo} alt="oddboll logo" className="nav-logo" />
