@@ -75,6 +75,18 @@ function PostCard({ path, posts }: IProps) {
             <div className="post-card-excerpt">
               {parse(post.excerpt.rendered)}
             </div>
+            <div
+              className="read-more-button"
+              onClick={() =>
+                handleClick(
+                  postPath,
+                  post.title.rendered,
+                  post.content.rendered
+                )
+              }
+            >
+              Read More
+            </div>
           </section>
         </article>
       );

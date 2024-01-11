@@ -1,37 +1,46 @@
-.post-title {
-  font-size: calc(2.6vw + 1rem);
-}
-
-.post-content {
-  text-align: left;
-  width: 50%;
-  margin: 0 auto;
+.post-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 
-  @media screen and (max-width: 767px) {
-    width: 90%;
-  }
+  .post {
+    width: 50%;
 
-  .post-content-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-
-    img {
-      width: 100%;
-      object-fit: contain;
-      height: auto;
+    @media screen and (max-width: 1024px) {
+      width: 90%;
     }
 
-    figcaption {
-      font-family: "Lato";
-      font-style: italic;
-      font-size: 1.1rem;
+    .post-title {
+      font-family: "Roboto";
+      font-size: calc(1.6vw + 1rem);
+    }
+
+    .post-content {
+      text-align: left;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+
+      .post-content-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        margin: auto;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+          height: auto;
+        }
+
+        figcaption {
+          font-family: "Lato";
+          font-style: italic;
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 }

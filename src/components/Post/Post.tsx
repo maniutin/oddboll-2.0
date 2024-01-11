@@ -9,9 +9,11 @@ function Post() {
   console.log("=== loc:", location.state);
 
   return (
-    <div className="post">
-      <h1 className="post-title">{parse(location.state.title)}</h1>
-      <div className="post-content">{parse(location.state.content)}</div>
+    <div className="post-wrapper">
+      <div className="post">
+        <h1 className="post-title">{parse(location.state.title)}</h1>
+        <div className="post-content">{parse(location.state.content)}</div>
+      </div>
     </div>
   );
 }

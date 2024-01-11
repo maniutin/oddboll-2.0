@@ -37,4 +37,13 @@
     font-style: italic;
     font-size: 1.1rem;
   }
+
+  .read-more-button {
+    margin-top: 0.5vw;
+    color: #fc221c;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    font-size: 1rem;
+  }
 }
