@@ -29,12 +29,16 @@
       width: 100%;
     }
 
+    .post-category {
+      margin-top: 0;
+    }
+
     .post-card-title {
       cursor: pointer;
       font-family: "Roboto";
       font-size: calc(2vw + 1rem);
       letter-spacing: 1px;
-      margin-top: 0;
+      margin: 0 0 1rem 0;
     }
 
     .post-card-excerpt {

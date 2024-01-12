@@ -23,6 +23,12 @@ const categoriesPathRef = {
   17: "/listen",
 };
 
+const categoriesTitleRef = {
+  15: "Review",
+  16: "Interview",
+  17: "Listen",
+};
+
 function PostCard({ path, posts }: IProps) {
   const navigate = useNavigate();
 
@@ -54,12 +60,19 @@ function PostCard({ path, posts }: IProps) {
         <article key={index} className="post-card">
           <img
             src={post._embedded?.["wp:featuredmedia"]?.["0"].source_url}
-            alt="album cover"
+            alt="post thumbnail"
             onClick={() =>
               handleClick(postPath, post.title.rendered, post.content.rendered)
             }
           />
           <section className="post-card-text">
+            <p className="post-category">
+              {
+                categoriesTitleRef[
+                  post.categories[1] as keyof typeof categoriesTitleRef
+                ]
+              }
+            </p>
             <h1
               className="post-card-title"
               onClick={() =>
@@ -70,7 +83,7 @@ function PostCard({ path, posts }: IProps) {
                 )
               }
             >
-              {post.title.rendered.replace(reg, '"')}
+              {post.title.rendered.replace(reg, '"').replace("&amp;", "&")}
             </h1>
             <div className="post-card-excerpt">
               {parse(post.excerpt.rendered)}
