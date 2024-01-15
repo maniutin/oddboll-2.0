@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useArticleData = (currentPage: number, category: number | undefined) => {
+const useArticleData = (
+  currentPage: number,
+  category: number | undefined,
+  setLastPage: React.Dispatch<React.SetStateAction<boolean>>
+) => {
   const [articleInfo, setArticleInfo] = useState({ articleData: [] });
 
   const perPage = 20;
@@ -13,6 +17,7 @@ const useArticleData = (currentPage: number, category: number | undefined) => {
       )
       .then((result) => {
         setArticleInfo((prev) => ({ ...prev, articleData: result.data }));
+        result.data.length < 20 ? setLastPage(true) : setLastPage(false);
       })
       .catch((err) => console.log("ERROR!", err));
   }, [currentPage, category]);

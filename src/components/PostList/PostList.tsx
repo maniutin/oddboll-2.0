@@ -6,14 +6,15 @@ interface IProps {
   category: number;
   currentPage: number;
   path: string;
+  setLastPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface Article {
   categories: number[];
 }
 
-function PostList({ category, currentPage, path }: IProps) {
-  const { articleInfo } = useArticleData(currentPage, category);
+function PostList({ category, currentPage, path, setLastPage }: IProps) {
+  const { articleInfo } = useArticleData(currentPage, category, setLastPage);
 
   console.log("=== ARTICLE INFO: ", articleInfo);
 

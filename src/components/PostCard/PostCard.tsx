@@ -44,8 +44,6 @@ function PostCard({ path, posts }: IProps) {
     });
   };
 
-  console.log("=== posts:", posts);
-
   return (
     posts &&
     posts.map((post: Post, index: number) => {

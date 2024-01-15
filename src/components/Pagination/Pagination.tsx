@@ -6,22 +6,34 @@ import RightArrow from "../../assets/right-arrow.png";
 
 type Props = {
   currentPage: number;
-  setCurrentPage: React.Dispatch<React.SetStateAction<any>>;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  lastPage: boolean;
 };
 
-function Pagination({ currentPage, setCurrentPage }: Props) {
+function Pagination({ currentPage, setCurrentPage, lastPage }: Props) {
   return (
     <div className="pagination">
       <div
-        className="arrow"
+        className="arrow-wrapper"
         onClick={() => setCurrentPage(currentPage > 1 ? currentPage - 1 : 1)}
       >
-        <img src={LeftArrow} alt="left arrow" className="arrow-img" />
-        <p>Newer Posts</p>
+        {currentPage > 1 && (
+          <div className="arrow">
+            <img src={LeftArrow} alt="left arrow" className="arrow-img" />
+            <p>Newer Posts</p>
+          </div>
+        )}
       </div>
-      <div className="arrow" onClick={() => setCurrentPage(currentPage + 1)}>
-        <p>Older Posts</p>
-        <img src={RightArrow} alt="right arrow" className="arrow-img" />
+      <div
+        className="arrow-wrapper"
+        onClick={() => setCurrentPage(currentPage + 1)}
+      >
+        {!lastPage && (
+          <div className="arrow">
+            <p>Older Posts</p>
+            <img src={RightArrow} alt="right arrow" className="arrow-img" />
+          </div>
+        )}
       </div>
     </div>
   );

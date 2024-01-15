@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer/Footer";
@@ -11,6 +11,9 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [lastPage, setLastPage] = useState<boolean>(false);
+
+  console.log("=== LAST: ", lastPage);
 
   return (
     <div className="App">
@@ -22,7 +25,12 @@ function App() {
             <Route
               path="/"
               element={
-                <PostList path={"/"} category={1} currentPage={currentPage} />
+                <PostList
+                  path={"/"}
+                  category={1}
+                  currentPage={currentPage}
+                  setLastPage={setLastPage}
+                />
               }
             />
             <Route
@@ -32,6 +40,7 @@ function App() {
                   path={"/reviews"}
                   category={15}
                   currentPage={currentPage}
+                  setLastPage={setLastPage}
                 />
               }
             />
@@ -43,6 +52,7 @@ function App() {
                   path={"/interviews"}
                   category={16}
                   currentPage={currentPage}
+                  setLastPage={setLastPage}
                 />
               }
             />
@@ -54,6 +64,7 @@ function App() {
                   path={"/listen"}
                   category={17}
                   currentPage={currentPage}
+                  setLastPage={setLastPage}
                 />
               }
             />
@@ -65,6 +76,7 @@ function App() {
                   path={"/3-word-reviews"}
                   category={1}
                   currentPage={currentPage}
+                  setLastPage={setLastPage}
                 />
               }
             />
@@ -75,13 +87,18 @@ function App() {
                   path={"/about"}
                   category={1}
                   currentPage={currentPage}
+                  setLastPage={setLastPage}
                 />
               }
             />
           </Routes>
         </main>
       </Router>
-      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        lastPage={lastPage}
+      />
       <Footer />
     </div>
   );
