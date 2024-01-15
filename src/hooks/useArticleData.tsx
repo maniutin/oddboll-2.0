@@ -17,7 +17,7 @@ const useArticleData = (
       )
       .then((result) => {
         setArticleInfo((prev) => ({ ...prev, articleData: result.data }));
-        result.data.length < 20 ? setLastPage(true) : setLastPage(false);
+        result.data.length < perPage ? setLastPage(true) : setLastPage(false);
       })
       .catch((err) => console.log("ERROR!", err));
   }, [currentPage, category]);
