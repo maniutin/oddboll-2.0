@@ -1,0 +1,15 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .arrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    .arrow-img {
+      height: 2rem;
+    }
+  }
+}

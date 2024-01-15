@@ -3,6 +3,8 @@ import { useArticleData } from "../../hooks/useArticleData";
 import PostCard from "../PostCard/PostCard";
 
 interface IProps {
+  category: number;
+  currentPage: number;
   path: string;
 }
 
@@ -10,35 +12,26 @@ interface Article {
   categories: number[];
 }
 
-function PostList({ path }: IProps) {
-  const { articleInfo } = useArticleData();
-
-  const filterPosts = (categories: number[]) => {
-    return (
-      articleInfo.articleData &&
-      articleInfo.articleData.filter((article: Article) =>
-        categories.some((category) => article.categories.includes(category))
-      )
-    );
-  };
+function PostList({ category, currentPage, path }: IProps) {
+  const { articleInfo } = useArticleData(currentPage, category);
 
   console.log("=== ARTICLE INFO: ", articleInfo);
 
   switch (path) {
     case "/":
-      return <PostCard path={path} posts={filterPosts([15, 16, 17])} />;
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/reviews":
-      return <PostCard path={path} posts={filterPosts([15])} />;
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/interviews":
-      return <PostCard path={path} posts={filterPosts([16])} />;
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/listen":
-      return <PostCard path={path} posts={filterPosts([17])} />;
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/3-word-reviews":
       return <p>3-word-reviews</p>;
     case "/about":
       return <p>about</p>;
     default:
-      return <PostCard path={path} posts={filterPosts([15, 16, 17])} />;
+      return <PostCard path={path} posts={articleInfo.articleData} />;
   }
 }
 

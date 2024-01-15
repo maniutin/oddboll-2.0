@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useArticleData = () => {
+const useArticleData = (currentPage: number, category: number | undefined) => {
   const [articleInfo, setArticleInfo] = useState({ articleData: [] });
 
-  const perPage = 100;
+  const perPage = 20;
 
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8888/wordpress-trunk/wp-json/wp/v2/posts?_embed&per_page=${perPage}`
+        `http://localhost:8888/wordpress-trunk/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage}&categories=${category}`
       )
       .then((result) => {
         setArticleInfo((prev) => ({ ...prev, articleData: result.data }));
       })
       .catch((err) => console.log("ERROR!", err));
-  }, []);
+  }, [currentPage, category]);
 
   return {
     articleInfo,
