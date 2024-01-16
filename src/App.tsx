@@ -13,8 +13,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [lastPage, setLastPage] = useState<boolean>(false);
 
-  console.log("=== LAST: ", lastPage);
-
   return (
     <div className="App">
       <Router>
@@ -29,6 +27,7 @@ function App() {
                   path={"/"}
                   category={1}
                   currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   setLastPage={setLastPage}
                 />
               }
@@ -40,6 +39,7 @@ function App() {
                   path={"/reviews"}
                   category={15}
                   currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   setLastPage={setLastPage}
                 />
               }
@@ -52,6 +52,7 @@ function App() {
                   path={"/interviews"}
                   category={16}
                   currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   setLastPage={setLastPage}
                 />
               }
@@ -64,6 +65,7 @@ function App() {
                   path={"/listen"}
                   category={17}
                   currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   setLastPage={setLastPage}
                 />
               }
@@ -76,6 +78,7 @@ function App() {
                   path={"/3-word-reviews"}
                   category={1}
                   currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   setLastPage={setLastPage}
                 />
               }
@@ -87,6 +90,7 @@ function App() {
                   path={"/about"}
                   category={1}
                   currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
                   setLastPage={setLastPage}
                 />
               }

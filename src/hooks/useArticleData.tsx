@@ -3,7 +3,7 @@ import axios from "axios";
 
 const useArticleData = (
   currentPage: number,
-  category: number | undefined,
+  category: number,
   setLastPage: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
   const [articleInfo, setArticleInfo] = useState({ articleData: [] });

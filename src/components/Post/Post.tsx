@@ -6,8 +6,6 @@ import parse from "html-react-parser";
 function Post() {
   let location = useLocation();
 
-  console.log("=== loc:", location.state);
-
   return (
     <div className="post-wrapper">
       <div className="post">
