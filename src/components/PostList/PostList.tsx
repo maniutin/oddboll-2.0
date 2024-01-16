@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useArticleData } from "../../hooks/useArticleData";
 import PostCard from "../PostCard/PostCard";
@@ -11,10 +11,6 @@ interface IProps {
   setLastPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface Article {
-  categories: number[];
-}
-
 function PostList({
   category,
   path,
@@ -25,8 +21,8 @@ function PostList({
   const { articleInfo } = useArticleData(currentPage, category, setLastPage);
 
   const usePrevious = (value: any) => {
-    const ref = React.useRef();
-    React.useEffect(() => {
+    const ref = useRef();
+    useEffect(() => {
       ref.current = value;
     });
 
@@ -36,8 +32,9 @@ function PostList({
   const useLocationChange = (action: any) => {
     const location = useLocation();
     const prevLocation = usePrevious(location);
-    React.useEffect(() => {
+    useEffect(() => {
       action(location, prevLocation);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location]);
   };
 

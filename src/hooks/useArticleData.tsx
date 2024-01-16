@@ -20,6 +20,7 @@ const useArticleData = (
         result.data.length < perPage ? setLastPage(true) : setLastPage(false);
       })
       .catch((err) => console.log("ERROR!", err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, category]);
 
   return {
