@@ -4,6 +4,17 @@
   align-items: flex-start;
   margin-bottom: 100px;
 
+  animation: fadeIn 3s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }

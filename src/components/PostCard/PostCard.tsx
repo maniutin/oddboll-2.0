@@ -55,9 +55,10 @@ function PostCard({ path, posts }: IProps) {
           : path
       }/${post.id}`;
       return (
-        <article key={index} className="post-card">
+        <article key={post.id} className="post-card">
           <img
             src={post._embedded?.["wp:featuredmedia"]?.["0"].source_url}
+            loading="lazy"
             alt="post thumbnail"
             onClick={() =>
               handleClick(postPath, post.title.rendered, post.content.rendered)
