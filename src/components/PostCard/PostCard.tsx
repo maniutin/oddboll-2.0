@@ -2,6 +2,7 @@ import "./PostCard.scss";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
+import { Fade } from "react-awesome-reveal";
 
 interface IProps {
   path: string;
@@ -55,25 +56,12 @@ function PostCard({ path, posts }: IProps) {
           : path
       }/${post.id}`;
       return (
-        <article key={post.id} className="post-card">
-          <img
-            src={post._embedded?.["wp:featuredmedia"]?.["0"].source_url}
-            loading="lazy"
-            alt="post thumbnail"
-            onClick={() =>
-              handleClick(postPath, post.title.rendered, post.content.rendered)
-            }
-          />
-          <section className="post-card-text">
-            <p className="post-category">
-              {
-                categoriesTitleRef[
-                  post.categories[1] as keyof typeof categoriesTitleRef
-                ]
-              }
-            </p>
-            <h1
-              className="post-card-title"
+        <Fade key={post.id} delay={150}>
+          <article className="post-card">
+            <img
+              src={post._embedded?.["wp:featuredmedia"]?.["0"].source_url}
+              loading="lazy"
+              alt="post thumbnail"
               onClick={() =>
                 handleClick(
                   postPath,
@@ -81,26 +69,45 @@ function PostCard({ path, posts }: IProps) {
                   post.content.rendered
                 )
               }
-            >
-              {post.title.rendered.replace(reg, '"').replace("&amp;", "&")}
-            </h1>
-            <div className="post-card-excerpt">
-              {parse(post.excerpt.rendered)}
-            </div>
-            <div
-              className="read-more-button"
-              onClick={() =>
-                handleClick(
-                  postPath,
-                  post.title.rendered,
-                  post.content.rendered
-                )
-              }
-            >
-              Read More
-            </div>
-          </section>
-        </article>
+            />
+            <section className="post-card-text">
+              <p className="post-category">
+                {
+                  categoriesTitleRef[
+                    post.categories[1] as keyof typeof categoriesTitleRef
+                  ]
+                }
+              </p>
+              <h1
+                className="post-card-title"
+                onClick={() =>
+                  handleClick(
+                    postPath,
+                    post.title.rendered,
+                    post.content.rendered
+                  )
+                }
+              >
+                {post.title.rendered.replace(reg, '"').replace("&amp;", "&")}
+              </h1>
+              <div className="post-card-excerpt">
+                {parse(post.excerpt.rendered)}
+              </div>
+              <div
+                className="read-more-button"
+                onClick={() =>
+                  handleClick(
+                    postPath,
+                    post.title.rendered,
+                    post.content.rendered
+                  )
+                }
+              >
+                Read More
+              </div>
+            </section>
+          </article>
+        </Fade>
       );
     })
   );
