@@ -58,7 +58,7 @@ function PostList({
     // case "/3-word-reviews":
     //   return <Page pageId={24} />;
     case "/about":
-      return <Page pageId={10} />;
+      return <Page pageId={10} setLastPage={setLastPage} />;
     default:
       return <PostCard path={path} posts={articleInfo.articleData} />;
   }

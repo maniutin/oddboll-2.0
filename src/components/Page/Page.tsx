@@ -1,25 +1,28 @@
 import "./Page.scss";
+import Loading from "../Loading/Loading";
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { usePageData } from "../../hooks/usePageData";
 import parse from "html-react-parser";
-import { Fade } from "react-awesome-reveal";
+import { usePageData } from "../../hooks/usePageData";
 
 interface IProps {
   pageId: number;
+  setLastPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Page({ pageId }: IProps) {
+function Page({ pageId, setLastPage }: IProps) {
+  setLastPage(true);
   const { pageInfo } = usePageData(pageId);
 
   return (
     <>
-      {Object.keys(pageInfo.pageData).length > 0 && (
+      {Object.keys(pageInfo.pageData).length > 0 ? (
         <div className="page-content-wrapper">
           <div className="page-content">
             {parse(pageInfo.pageData.content.rendered)}
           </div>
         </div>
+      ) : (
+        <Loading />
       )}
     </>
   );
