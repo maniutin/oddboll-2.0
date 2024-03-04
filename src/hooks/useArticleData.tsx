@@ -13,7 +13,7 @@ const useArticleData = (
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8888/wordpress-trunk/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage}&categories=${category}`
+        `https://qfn.fuu.mybluehost.me/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${currentPage}&categories=${category}`
       )
       .then((result) => {
         setArticleInfo((prev) => ({ ...prev, articleData: result.data }));
