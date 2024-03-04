@@ -7,6 +7,7 @@ import { Fade } from "react-awesome-reveal";
 interface IProps {
   path: string;
   posts: any;
+  setLastPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface Post {
@@ -30,7 +31,7 @@ const categoriesTitleRef = {
   17: "Listen",
 };
 
-function PostCard({ path, posts }: IProps) {
+function PostCard({ path, posts, setLastPage }: IProps) {
   const navigate = useNavigate();
 
   const reg = /&#8220;|&#8221;/g;
@@ -40,6 +41,7 @@ function PostCard({ path, posts }: IProps) {
     postTitle: string,
     postContent: string
   ) => {
+    setLastPage(true);
     navigate(postPath, {
       state: { title: postTitle, content: postContent },
     });
