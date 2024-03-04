@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useArticleData } from "../../hooks/useArticleData";
+import Page from "../Page/Page";
 import PostCard from "../PostCard/PostCard";
 
 interface IProps {
@@ -42,10 +43,8 @@ function PostList({
     if (prevLocation) {
       setCurrentPage(1);
     }
-    console.log("changed from", prevLocation, "to", location);
+    // console.log("changed from", prevLocation, "to", location);
   });
-
-  console.log("=== ARTICLE INFO: ", articleInfo);
 
   switch (path) {
     case "/":
@@ -56,10 +55,10 @@ function PostList({
       return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/listen":
       return <PostCard path={path} posts={articleInfo.articleData} />;
-    case "/3-word-reviews":
-      return <p>3-word-reviews</p>;
+    // case "/3-word-reviews":
+    //   return <Page pageId={24} />;
     case "/about":
-      return <p>about</p>;
+      return <Page pageId={10} />;
     default:
       return <PostCard path={path} posts={articleInfo.articleData} />;
   }

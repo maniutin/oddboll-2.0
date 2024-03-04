@@ -71,7 +71,7 @@ function App() {
               }
             />
             <Route path="/listen/:id" element={<Post />} />
-            <Route
+            {/* <Route
               path="/3-word-reviews"
               element={
                 <PostList
@@ -82,7 +82,7 @@ function App() {
                   setLastPage={setLastPage}
                 />
               }
-            />
+            /> */}
             <Route
               path="/about"
               element={

@@ -98,7 +98,7 @@ const Nav = () => {
             </NavLink>
           </div>
 
-          <div className="nav-link">
+          {/* <div className="nav-link">
             <NavLink
               to="/3-word-reviews"
               onClick={() => setExpandBurger(!expandBurger)}
@@ -112,7 +112,7 @@ const Nav = () => {
             >
               3-Word Reviews
             </NavLink>
-          </div>
+          </div> */}
 
           <div className="nav-link">
             <NavLink
