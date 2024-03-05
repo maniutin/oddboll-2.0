@@ -1,12 +1,10 @@
-# Minimalist Modern Music Blog
+# Minimalist Modern Responsive Music Blog
 
 [oddboll.com](https://oddboll.com/).
 
 ## Screenshots
 
 ![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%207.30.24%20PM.png)
-
-![Website screen capture](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Recording%202024-03-04%20at%208.57.43%20PM.mov)
 
 ## Available Scripts
 
