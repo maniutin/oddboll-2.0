@@ -48,49 +48,19 @@ function PostList({
 
   switch (path) {
     case "/":
-      return (
-        <PostCard
-          path={path}
-          posts={articleInfo.articleData}
-          setLastPage={setLastPage}
-        />
-      );
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/reviews":
-      return (
-        <PostCard
-          path={path}
-          posts={articleInfo.articleData}
-          setLastPage={setLastPage}
-        />
-      );
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/interviews":
-      return (
-        <PostCard
-          path={path}
-          posts={articleInfo.articleData}
-          setLastPage={setLastPage}
-        />
-      );
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     case "/listen":
-      return (
-        <PostCard
-          path={path}
-          posts={articleInfo.articleData}
-          setLastPage={setLastPage}
-        />
-      );
+      return <PostCard path={path} posts={articleInfo.articleData} />;
     // case "/3-word-reviews":
     //   return <Page pageId={24} />;
     case "/about":
       return <Page pageId={10} setLastPage={setLastPage} />;
     default:
-      return (
-        <PostCard
-          path={path}
-          posts={articleInfo.articleData}
-          setLastPage={setLastPage}
-        />
-      );
+      return <PostCard path={path} posts={articleInfo.articleData} />;
   }
 }
 

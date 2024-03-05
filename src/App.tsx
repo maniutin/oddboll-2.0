@@ -44,7 +44,10 @@ function App() {
                 />
               }
             />
-            <Route path="/reviews/:id" element={<Post />} />
+            <Route
+              path="/reviews/:id"
+              element={<Post setLastPage={setLastPage} />}
+            />
             <Route
               path="/interviews"
               element={
@@ -57,7 +60,10 @@ function App() {
                 />
               }
             />
-            <Route path="/interviews/:id" element={<Post />} />
+            <Route
+              path="/interviews/:id"
+              element={<Post setLastPage={setLastPage} />}
+            />
             <Route
               path="/listen"
               element={
@@ -70,7 +76,10 @@ function App() {
                 />
               }
             />
-            <Route path="/listen/:id" element={<Post />} />
+            <Route
+              path="/listen/:id"
+              element={<Post setLastPage={setLastPage} />}
+            />
             {/* <Route
               path="/3-word-reviews"
               element={
