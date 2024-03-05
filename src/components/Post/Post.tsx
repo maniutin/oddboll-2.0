@@ -29,6 +29,7 @@ function Post({ setLastPage }: IProps) {
     } else {
       setCurrentPostData(location.state);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPostId]);
 
   return (
