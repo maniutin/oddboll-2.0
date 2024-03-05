@@ -2,7 +2,7 @@
 
 [oddboll.com](https://oddboll.com/).
 
-## Media
+## Screenshots
 
 ![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%207.30.24%20PM.png)
 
