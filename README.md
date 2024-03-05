@@ -1,6 +1,6 @@
 # Minimalist Modern Responsive Music Blog
 
-[oddboll.com](https://oddboll.com/).
+[oddboll.com](https://oddboll.com/)
 
 ## Screenshots
 
@@ -8,8 +8,8 @@
 ![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.08.44%20PM.png)
 
 <div>
-  <img src="https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.09.11%20PM.png" width="400" alt="Mobile View">
-  <img src="https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.09.21%20PM.png" width="400" alt="Mobile View">
+  <img src="https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.09.11%20PM.png" width="400" height="800" alt="Mobile View">
+  <img src="https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.09.21%20PM.png" width="400" height="800" alt="Mobile View">
 </div>
 
 ## Available Scripts
