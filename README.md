@@ -6,6 +6,8 @@
 
 ![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%207.30.24%20PM.png)
 
+![Website screen capture](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Recording%202024-03-04%20at%208.57.43%20PM.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
