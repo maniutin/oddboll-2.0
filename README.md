@@ -5,6 +5,9 @@
 ## Screenshots
 
 ![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%207.30.24%20PM.png)
+![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.08.44%20PM.png)
+![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.09.11%20PM.png)
+![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%209.09.21%20PM.png)
 
 ## Available Scripts
 
