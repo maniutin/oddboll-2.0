@@ -4,19 +4,7 @@
 
 ## Media
 
-<!-- The script tag should live in the head of your page if at all possible -->
-<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
-
-<!-- Put this wherever you would like your player to appear -->
-
-<img
-  style="width: 100%; margin: auto; display: block;"
-  class="vidyard-player-embed"
-  src="https://play.vidyard.com/3jsPqfjHextF668N3hnKB8.jpg"
-  data-uuid="3jsPqfjHextF668N3hnKB8"
-  data-v="4"
-  data-type="inline"
-/>
+![Website screenshot](https://github.com/maniutin/oddboll-2.0/blob/main/src/assets/images/Screen%20Shot%202024-03-04%20at%207.30.24%20PM.png)
 
 ## Available Scripts
 
